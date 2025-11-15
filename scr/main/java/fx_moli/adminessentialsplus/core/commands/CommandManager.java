@@ -204,6 +204,14 @@ public class CommandManager {
         registerCommand("mass", new fx_moli.adminessentialsplus.core.commands.admin.MassCommand(plugin));
         registerCommand("playerinfo", new fx_moli.adminessentialsplus.core.commands.admin.PlayerInfoCommand(plugin));
         registerCommand("pinfo", new fx_moli.adminessentialsplus.core.commands.admin.PlayerInfoCommand(plugin));
+        
+        // Новые команды модерации (v1.3.0)
+        registerCommand("history", new fx_moli.adminessentialsplus.core.commands.moderation.HistoryCommand(plugin));
+        registerCommand("checkip", new fx_moli.adminessentialsplus.core.commands.moderation.CheckIPCommand(plugin));
+        registerCommand("tempban", new fx_moli.adminessentialsplus.core.commands.moderation.TempBanCommand(plugin));
+        registerCommand("clearchat", new fx_moli.adminessentialsplus.core.commands.moderation.ClearChatCommand(plugin));
+        registerCommand("cc", new fx_moli.adminessentialsplus.core.commands.moderation.ClearChatCommand(plugin));
+        registerCommand("note", new fx_moli.adminessentialsplus.core.commands.moderation.NoteCommand(plugin));
 
         plugin.getLogger().info("Registered " + plugin.getDescription().getCommands().size() + " commands");
     }

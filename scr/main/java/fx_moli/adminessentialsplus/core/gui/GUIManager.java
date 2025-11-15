@@ -72,94 +72,105 @@ public class GUIManager {
         }
     }
 
-    // Главное меню
+    // Главное меню - выбор команды
     public void openMainMenu(Player player) {
-        Inventory inv = Bukkit.createInventory(null, 54, "§8§l⚡ §6§lAdmin Menu §8§l⚡");
+        Inventory inv = Bukkit.createInventory(null, 54, "§8§l⚡ §6§lВыбор команды §8§l⚡");
 
-        // Рамка
         createBorder(inv, Material.BLACK_STAINED_GLASS_PANE);
 
-        // Управление игроками
+        // Категория: Управление игроками
         inv.setItem(10, createItem(Material.PLAYER_HEAD, "§6§lУправление игроками",
-                "§7Управляйте игроками на сервере",
+                "§7Команды управления",
                 "",
-                "§e▸ Телепортация",
-                "§e▸ Инвентарь",
-                "§e▸ Статистика",
+                "§e▸ Heal - Вылечить",
+                "§e▸ Feed - Накормить",
+                "§e▸ Fly - Полет",
+                "§e▸ God - Режим бога",
                 "",
-                "§aНажмите для открытия"));
+                "§aНажмите для выбора"));
 
-        // Модерация
+        // Категория: Телепортация
+        inv.setItem(11, createItem(Material.ENDER_PEARL, "§b§lТелепортация",
+                "§7Команды телепортации",
+                "",
+                "§e▸ TP - Телепорт к игроку",
+                "§e▸ TPHere - ТП к себе",
+                "§e▸ Bring - Притянуть",
+                "",
+                "§aНажмите для выбора"));
+
+        // Категория: Модерация
         inv.setItem(12, createItem(Material.DIAMOND_SWORD, "§c§lМодерация",
-                "§7Инструменты модерации",
+                "§7Команды модерации",
                 "",
-                "§e▸ Бан/Кик/Мут",
-                "§e▸ Предупреждения",
-                "§e▸ История",
+                "§e▸ Kick - Кикнуть",
+                "§e▸ Ban - Забанить",
+                "§e▸ Mute - Замутить",
+                "§e▸ Warn - Предупредить",
                 "",
-                "§aНажмите для открытия"));
+                "§aНажмите для выбора"));
 
-        // Управление миром
-        inv.setItem(14, createItem(Material.GRASS_BLOCK, "§2§lУправление миром",
-                "§7Настройки мира",
-                "",
-                "§e▸ Погода/Время",
-                "§e▸ Настройки",
-                "§e▸ Информация",
-                "",
-                "§aНажмите для открытия"));
-
-        // Предметы
-        inv.setItem(16, createItem(Material.CHEST, "§e§lПредметы",
-                "§7Управление предметами",
-                "",
-                "§e▸ Выдать предметы",
-                "§e▸ Наборы",
-                "§e▸ Зачарования",
-                "",
-                "§aНажмите для открытия"));
-
-        // Развлечения
-        inv.setItem(28, createItem(Material.FIREWORK_ROCKET, "§d§lРазвлечения",
+        // Категория: Развлечения
+        inv.setItem(13, createItem(Material.FIREWORK_ROCKET, "§d§lРазвлечения",
                 "§7Веселые команды",
                 "",
-                "§e▸ Запуск игроков",
-                "§e▸ Эффекты",
-                "§e▸ Фейерверки",
+                "§e▸ Launch - Запустить",
+                "§e▸ Freeze - Заморозить",
+                "§e▸ Explode - Взрыв",
+                "§e▸ Slap - Шлепнуть",
                 "",
-                "§aНажмите для открытия"));
+                "§aНажмите для выбора"));
 
-        // Телепортация
-        inv.setItem(30, createItem(Material.ENDER_PEARL, "§b§lТелепортация",
-                "§7Быстрая телепортация",
+        // Категория: Эффекты
+        inv.setItem(14, createItem(Material.POTION, "§5§lЭффекты",
+                "§7Команды эффектов",
                 "",
-                "§e▸ К игрокам",
-                "§e▸ Варпы",
-                "§e▸ Координаты",
+                "§e▸ Glow - Свечение",
+                "§e▸ Trail - След",
+                "§e▸ Particle - Частицы",
+                "§e▸ Rainbow - Радуга",
                 "",
-                "§aНажмите для открытия"));
+                "§aНажмите для выбора"));
 
-        // AI Помощник
-        inv.setItem(32, createItem(Material.ENCHANTED_BOOK, "§5§lAI Помощник",
-                "§7Искусственный интеллект",
+        // Категория: Изменение
+        inv.setItem(15, createItem(Material.GOLDEN_APPLE, "§e§lИзменение",
+                "§7Команды изменения",
                 "",
-                "§e▸ Модерация чата",
-                "§e▸ Анализ жалоб",
-                "§e▸ Диагностика",
+                "§e▸ Size - Размер",
+                "§e▸ Nick - Никнейм",
+                "§e▸ Skull - Голова",
                 "",
-                "§aНажмите для открытия"));
+                "§aНажмите для выбора"));
 
-        // Настройки
-        inv.setItem(34, createItem(Material.COMPARATOR, "§7§lНастройки",
-                "§7Настройки плагина",
+        // Категория: Просмотр
+        inv.setItem(16, createItem(Material.SPYGLASS, "§3§lПросмотр",
+                "§7Команды просмотра",
                 "",
-                "§e▸ Конфигурация",
-                "§e▸ Права доступа",
-                "§e▸ База данных",
+                "§e▸ InvSee - Инвентарь",
+                "§e▸ EnderChest - Эндер-сундук",
+                "§e▸ PlayerInfo - Информация",
                 "",
-                "§aНажмите для открытия"));
+                "§aНажмите для выбора"));
 
-        // Статистика сервера
+        // Быстрые действия
+        inv.setItem(28, createItem(Material.NETHER_STAR, "§a§lБыстрые действия",
+                "§7Массовые команды",
+                "",
+                "§e▸ HealAll - Вылечить всех",
+                "§e▸ FeedAll - Накормить всех",
+                "§e▸ ClearLag - Очистить лаги",
+                "",
+                "§aНажмите для выбора"));
+
+        // Список игроков
+        inv.setItem(31, createItem(Material.COMPASS, "§6§lСписок игроков",
+                "§7Выбрать игрока напрямую",
+                "",
+                "§7Игроков онлайн: §e" + Bukkit.getOnlinePlayers().size(),
+                "",
+                "§aНажмите для просмотра"));
+
+        // Статистика
         inv.setItem(49, createItem(Material.BOOK, "§a§lСтатистика сервера",
                 "§7Информация о сервере",
                 "",
@@ -170,6 +181,315 @@ public class GUIManager {
                 "§aНажмите для подробностей"));
 
         player.openInventory(inv);
+    }
+
+    // Меню выбора команды управления игроками
+    public void openPlayerManagementCommands(Player admin) {
+        Inventory inv = Bukkit.createInventory(null, 54, "§6§lУправление игроками");
+        
+        createBorder(inv, Material.ORANGE_STAINED_GLASS_PANE);
+        
+        inv.setItem(10, createItem(Material.GOLDEN_APPLE, "§c§lHeal",
+                "§7Вылечить игрока",
+                "",
+                "§aНажмите для выбора игрока"));
+        
+        inv.setItem(11, createItem(Material.COOKED_BEEF, "§6§lFeed",
+                "§7Накормить игрока",
+                "",
+                "§aНажмите для выбора игрока"));
+        
+        inv.setItem(12, createItem(Material.FEATHER, "§f§lFly",
+                "§7Включить/выключить полет",
+                "",
+                "§aНажмите для выбора игрока"));
+        
+        inv.setItem(13, createItem(Material.TOTEM_OF_UNDYING, "§e§lGod",
+                "§7Режим бога",
+                "",
+                "§aНажмите для выбора игрока"));
+        
+        inv.setItem(14, createItem(Material.ENDER_EYE, "§5§lVanish",
+                "§7Невидимость",
+                "",
+                "§aНажмите для выбора игрока"));
+        
+        inv.setItem(15, createItem(Material.LAVA_BUCKET, "§c§lClear",
+                "§7Очистить инвентарь",
+                "",
+                "§aНажмите для выбора игрока"));
+        
+        inv.setItem(16, createItem(Material.EXPERIENCE_BOTTLE, "§a§lExp",
+                "§7Выдать опыт",
+                "",
+                "§aНажмите для выбора игрока"));
+        
+        inv.setItem(49, createItem(Material.ARROW, "§cНазад",
+                "§7Вернуться в главное меню"));
+        
+        admin.openInventory(inv);
+    }
+
+    // Меню выбора команды телепортации
+    public void openTeleportCommands(Player admin) {
+        Inventory inv = Bukkit.createInventory(null, 54, "§b§lТелепортация");
+        
+        createBorder(inv, Material.CYAN_STAINED_GLASS_PANE);
+        
+        inv.setItem(11, createItem(Material.ENDER_PEARL, "§b§lTP",
+                "§7Телепортироваться к игроку",
+                "",
+                "§aНажмите для выбора игрока"));
+        
+        inv.setItem(13, createItem(Material.ENDER_EYE, "§b§lTPHere",
+                "§7Телепортировать игрока к себе",
+                "",
+                "§aНажмите для выбора игрока"));
+        
+        inv.setItem(15, createItem(Material.FISHING_ROD, "§b§lBring",
+                "§7Притянуть игрока",
+                "",
+                "§aНажмите для выбора игрока"));
+        
+        inv.setItem(49, createItem(Material.ARROW, "§cНазад",
+                "§7Вернуться в главное меню"));
+        
+        admin.openInventory(inv);
+    }
+
+    // Меню выбора команды модерации
+    public void openModerationCommands(Player admin) {
+        Inventory inv = Bukkit.createInventory(null, 54, "§c§lМодерация");
+        
+        createBorder(inv, Material.RED_STAINED_GLASS_PANE);
+        
+        inv.setItem(10, createItem(Material.IRON_DOOR, "§6§lKick",
+                "§7Кикнуть игрока",
+                "",
+                "§aНажмите для выбора игрока"));
+        
+        inv.setItem(11, createItem(Material.BARRIER, "§c§lBan",
+                "§7Забанить игрока",
+                "",
+                "§aНажмите для выбора игрока"));
+        
+        inv.setItem(12, createItem(Material.PAPER, "§7§lMute",
+                "§7Замутить игрока",
+                "",
+                "§aНажмите для выбора игрока"));
+        
+        inv.setItem(13, createItem(Material.WRITABLE_BOOK, "§e§lWarn",
+                "§7Предупредить игрока",
+                "",
+                "§aНажмите для выбора игрока"));
+        
+        inv.setItem(14, createItem(Material.ICE, "§b§lFreeze",
+                "§7Заморозить игрока",
+                "",
+                "§aНажмите для выбора игрока"));
+        
+        inv.setItem(49, createItem(Material.ARROW, "§cНазад",
+                "§7Вернуться в главное меню"));
+        
+        admin.openInventory(inv);
+    }
+
+    // Меню выбора команды развлечений
+    public void openFunCommands(Player admin) {
+        Inventory inv = Bukkit.createInventory(null, 54, "§d§lРазвлечения");
+        
+        createBorder(inv, Material.PINK_STAINED_GLASS_PANE);
+        
+        inv.setItem(10, createItem(Material.FIREWORK_ROCKET, "§d§lLaunch",
+                "§7Запустить игрока в воздух",
+                "",
+                "§aНажмите для выбора игрока"));
+        
+        inv.setItem(11, createItem(Material.ICE, "§b§lFreeze",
+                "§7Заморозить игрока",
+                "",
+                "§aНажмите для выбора игрока"));
+        
+        inv.setItem(12, createItem(Material.TNT, "§c§lExplode",
+                "§7Создать взрыв",
+                "",
+                "§aНажмите для выбора игрока"));
+        
+        inv.setItem(13, createItem(Material.STICK, "§6§lSlap",
+                "§7Шлепнуть игрока",
+                "",
+                "§aНажмите для выбора игрока"));
+        
+        inv.setItem(14, createItem(Material.ELYTRA, "§f§lRocket",
+                "§7Запустить как ракету",
+                "",
+                "§aНажмите для выбора игрока"));
+        
+        inv.setItem(49, createItem(Material.ARROW, "§cНазад",
+                "§7Вернуться в главное меню"));
+        
+        admin.openInventory(inv);
+    }
+
+    // Меню выбора команды эффектов
+    public void openEffectCommands(Player admin) {
+        Inventory inv = Bukkit.createInventory(null, 54, "§5§lЭффекты");
+        
+        createBorder(inv, Material.PURPLE_STAINED_GLASS_PANE);
+        
+        inv.setItem(10, createItem(Material.GLOWSTONE, "§e§lGlow",
+                "§7Эффект свечения",
+                "",
+                "§aНажмите для выбора игрока"));
+        
+        inv.setItem(11, createItem(Material.BLAZE_POWDER, "§6§lTrail",
+                "§7След из частиц",
+                "",
+                "§aНажмите для выбора игрока"));
+        
+        inv.setItem(12, createItem(Material.DRAGON_BREATH, "§d§lParticle",
+                "§7Частицы вокруг",
+                "",
+                "§aНажмите для выбора игрока"));
+        
+        inv.setItem(13, createItem(Material.LEATHER_CHESTPLATE, "§c§lRainbow",
+                "§7Радужная броня",
+                "",
+                "§aНажмите для выбора игрока"));
+        
+        inv.setItem(14, createItem(Material.ENDER_EYE, "§5§lNightVision",
+                "§7Ночное зрение",
+                "",
+                "§aНажмите для выбора игрока"));
+        
+        inv.setItem(49, createItem(Material.ARROW, "§cНазад",
+                "§7Вернуться в главное меню"));
+        
+        admin.openInventory(inv);
+    }
+
+    // Меню выбора команды изменения
+    public void openModifyCommands(Player admin) {
+        Inventory inv = Bukkit.createInventory(null, 54, "§e§lИзменение");
+        
+        createBorder(inv, Material.YELLOW_STAINED_GLASS_PANE);
+        
+        inv.setItem(11, createItem(Material.SLIME_BALL, "§a§lSize",
+                "§7Изменить размер",
+                "",
+                "§aНажмите для выбора игрока"));
+        
+        inv.setItem(13, createItem(Material.NAME_TAG, "§6§lNick",
+                "§7Изменить никнейм",
+                "",
+                "§aНажмите для выбора игрока"));
+        
+        inv.setItem(15, createItem(Material.PLAYER_HEAD, "§e§lSkull",
+                "§7Получить голову игрока",
+                "",
+                "§aНажмите для выбора игрока"));
+        
+        inv.setItem(49, createItem(Material.ARROW, "§cНазад",
+                "§7Вернуться в главное меню"));
+        
+        admin.openInventory(inv);
+    }
+
+    // Меню выбора команды просмотра
+    public void openViewCommands(Player admin) {
+        Inventory inv = Bukkit.createInventory(null, 54, "§3§lПросмотр");
+        
+        createBorder(inv, Material.LIGHT_BLUE_STAINED_GLASS_PANE);
+        
+        inv.setItem(11, createItem(Material.CHEST, "§e§lInvSee",
+                "§7Просмотр инвентаря",
+                "",
+                "§aНажмите для выбора игрока"));
+        
+        inv.setItem(13, createItem(Material.ENDER_CHEST, "§5§lEnderChest",
+                "§7Просмотр эндер-сундука",
+                "",
+                "§aНажмите для выбора игрока"));
+        
+        inv.setItem(15, createItem(Material.BOOK, "§6§lPlayerInfo",
+                "§7Информация о игроке",
+                "",
+                "§aНажмите для выбора игрока"));
+        
+        inv.setItem(49, createItem(Material.ARROW, "§cНазад",
+                "§7Вернуться в главное меню"));
+        
+        admin.openInventory(inv);
+    }
+
+    // Меню быстрых действий
+    public void openQuickActionsMenu(Player admin) {
+        Inventory inv = Bukkit.createInventory(null, 54, "§a§lБыстрые действия");
+        
+        createBorder(inv, Material.LIME_STAINED_GLASS_PANE);
+        
+        inv.setItem(10, createItem(Material.GOLDEN_APPLE, "§c§lHealAll",
+                "§7Вылечить всех игроков",
+                "",
+                "§aНажмите для выполнения"));
+        
+        inv.setItem(11, createItem(Material.COOKED_BEEF, "§6§lFeedAll",
+                "§7Накормить всех игроков",
+                "",
+                "§aНажмите для выполнения"));
+        
+        inv.setItem(12, createItem(Material.HOPPER, "§e§lClearLag",
+                "§7Очистить лаги",
+                "",
+                "§aНажмите для выполнения"));
+        
+        inv.setItem(13, createItem(Material.ENDER_PEARL, "§b§lTPAll",
+                "§7Телепортировать всех к себе",
+                "",
+                "§aНажмите для выполнения"));
+        
+        inv.setItem(14, createItem(Material.CLOCK, "§e§lDay",
+                "§7Установить день",
+                "",
+                "§aНажмите для выполнения"));
+        
+        inv.setItem(15, createItem(Material.SUNFLOWER, "§6§lSun",
+                "§7Убрать дождь",
+                "",
+                "§aНажмите для выполнения"));
+        
+        inv.setItem(49, createItem(Material.ARROW, "§cНазад",
+                "§7Вернуться в главное меню"));
+        
+        admin.openInventory(inv);
+    }
+
+    // Меню выбора игрока для команды
+    public void openPlayerSelector(Player admin, String command) {
+        Inventory inv = Bukkit.createInventory(null, 54, "§6§lВыбор игрока: §e" + command);
+        
+        createBorder(inv, Material.GRAY_STAINED_GLASS_PANE);
+        
+        int slot = 10;
+        for (Player target : Bukkit.getOnlinePlayers()) {
+            if (slot >= 44) break;
+            if (slot % 9 == 0 || slot % 9 == 8) slot += 2;
+            
+            List<String> lore = new ArrayList<>();
+            lore.add("§7UUID: §e" + target.getUniqueId().toString().substring(0, 8) + "...");
+            lore.add("§7Пинг: §e" + target.getPing() + "ms");
+            lore.add("§7Здоровье: §c" + String.format("%.1f", target.getHealth()) + "§7/§c20.0");
+            lore.add("");
+            lore.add("§aНажмите для выполнения команды");
+            
+            inv.setItem(slot, createItem(Material.PLAYER_HEAD, "§6" + target.getName(), lore.toArray(new String[0])));
+            slot++;
+        }
+        
+        inv.setItem(49, createItem(Material.ARROW, "§cНазад",
+                "§7Вернуться к выбору команды"));
+        
+        admin.openInventory(inv);
     }
 
     // Меню управления игроками

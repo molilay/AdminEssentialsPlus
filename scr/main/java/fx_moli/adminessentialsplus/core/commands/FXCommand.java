@@ -258,6 +258,19 @@ public class FXCommand implements CommandExecutor, TabCompleter {
             case "gui":
                 return plugin.getServer().dispatchCommand(sender, "menu " + String.join(" ", subArgs));
             
+            // Новые команды модерации v1.3.0
+            case "history":
+                return plugin.getServer().dispatchCommand(sender, "history " + String.join(" ", subArgs));
+            case "checkip":
+                return plugin.getServer().dispatchCommand(sender, "checkip " + String.join(" ", subArgs));
+            case "tempban":
+                return plugin.getServer().dispatchCommand(sender, "tempban " + String.join(" ", subArgs));
+            case "clearchat":
+            case "cc":
+                return plugin.getServer().dispatchCommand(sender, "clearchat " + String.join(" ", subArgs));
+            case "note":
+                return plugin.getServer().dispatchCommand(sender, "note " + String.join(" ", subArgs));
+            
             // Помощь
             case "help":
             case "?":

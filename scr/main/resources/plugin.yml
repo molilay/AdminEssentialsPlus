@@ -396,6 +396,27 @@ commands:
     usage: /<command> <player>
     permission: adminessentialsplus.playerinfo
     aliases: [pinfo]
+  history:
+    description: View player punishment history
+    usage: /<command> <player> [limit]
+    permission: adminessentialsplus.history
+  checkip:
+    description: Check player IP and find alts
+    usage: /<command> <player>
+    permission: adminessentialsplus.checkip
+  tempban:
+    description: Temporarily ban a player
+    usage: /<command> <player> <time> [reason]
+    permission: adminessentialsplus.tempban
+  clearchat:
+    description: Clear chat for all players
+    usage: /<command>
+    permission: adminessentialsplus.clearchat
+    aliases: [cc]
+  note:
+    description: Add notes about players
+    usage: /<command> <player> <add|list|clear> [text]
+    permission: adminessentialsplus.note
 
 permissions:
   adminessentialsplus.*:
@@ -419,3 +440,10 @@ permissions:
       adminessentialsplus.mass: true
       adminessentialsplus.playerinfo: true
       adminessentialsplus.bypass.kick: true
+      adminessentialsplus.history: true
+      adminessentialsplus.checkip: true
+      adminessentialsplus.tempban: true
+      adminessentialsplus.clearchat: true
+      adminessentialsplus.note: true
+      adminessentialsplus.clearchat.bypass: true
+      adminessentialsplus.bypass.ban: true

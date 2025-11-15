@@ -19,6 +19,7 @@ public class AdminEssentialsPlus extends JavaPlugin {
     private InspectionManager inspectionManager;
     private BanItemManager banItemManager;
     private fx_moli.adminessentialsplus.core.gui.GUIManager guiManager;
+    private fx_moli.adminessentialsplus.core.managers.PunishmentManager punishmentManager;
 
     @Override
     public void onEnable() {
@@ -50,6 +51,9 @@ public class AdminEssentialsPlus extends JavaPlugin {
 
         // Инициализация GUI Manager
         guiManager = new fx_moli.adminessentialsplus.core.gui.GUIManager(this);
+
+        // Инициализация Punishment Manager
+        punishmentManager = new fx_moli.adminessentialsplus.core.managers.PunishmentManager(this);
 
         // Регистрация команд
         commandManager = new CommandManager(this);
@@ -118,5 +122,9 @@ public class AdminEssentialsPlus extends JavaPlugin {
 
     public fx_moli.adminessentialsplus.core.gui.GUIManager getGuiManager() {
         return guiManager;
+    }
+
+    public fx_moli.adminessentialsplus.core.managers.PunishmentManager getPunishmentManager() {
+        return punishmentManager;
     }
 }
