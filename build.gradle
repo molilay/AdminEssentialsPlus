@@ -1,0 +1,102 @@
+plugins {
+    id 'java'
+    id 'com.github.johnrengelman.shadow' version '8.1.1'
+}
+
+group = 'fx_moli'
+version = '1.2.0'
+description = 'AdminEssentialsPlus - Advanced admin tools with AI for Paper 1.21.3+'
+
+java {
+    sourceCompatibility = JavaVersion.VERSION_17
+    targetCompatibility = JavaVersion.VERSION_17
+}
+
+repositories {
+    mavenCentral()
+    maven {
+        name = 'papermc'
+        url = 'https://repo.papermc.io/repository/maven-public/'
+    }
+}
+
+dependencies {
+    compileOnly 'io.papermc.paper:paper-api:1.21.3-R0.1-SNAPSHOT'
+    implementation 'org.xerial:sqlite-jdbc:3.46.1.0'
+}
+
+sourceSets {
+    main {
+        java {
+            srcDirs = ['scr/main/java']
+        }
+        resources {
+            srcDirs = ['scr/main/resources']
+        }
+    }
+}
+
+tasks.withType(JavaCompile).configureEach {
+    options.encoding = 'UTF-8'
+    options.compilerArgs += ['-Xlint:deprecation', '-Xlint:unchecked']
+}
+
+processResources {
+    filteringCharset = 'UTF-8'
+    duplicatesStrategy = DuplicatesStrategy.INCLUDE
+    
+    from(sourceSets.main.resources.srcDirs) {
+        include '**/*.yml'
+        expand('version': project.version)
+    }
+    
+    from(sourceSets.main.resources.srcDirs) {
+        exclude '**/*.yml'
+    }
+}
+
+shadowJar {
+    archiveClassifier.set('')
+    archiveFileName.set("${project.name}-${project.version}.jar")
+    destinationDirectory.set(file("$rootDir/target"))
+    
+    relocate 'org.sqlite', 'fx_moli.adminessentialsplus.libs.sqlite'
+    
+    manifest {
+        attributes(
+            'Implementation-Title': project.name,
+            'Implementation-Version': project.version,
+            'Built-By': System.getProperty('user.name'),
+            'Built-JDK': System.getProperty('java.version')
+        )
+    }
+    
+    minimize {
+        exclude(dependency('org.xerial:.*:.*'))
+    }
+}
+
+task buildPlugin {
+    dependsOn clean, shadowJar
+    group = 'build'
+    description = 'Clean and build plugin to target folder'
+    
+    doLast {
+        println ""
+        println "━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━"
+        println "✅ Build complete!"
+        println "📦 JAR: target/${project.name}-${project.version}.jar"
+        println "━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━"
+        println ""
+    }
+}
+
+clean {
+    delete "$rootDir/target"
+}
+
+build {
+    dependsOn shadowJar
+}
+
+defaultTasks 'clean', 'shadowJar'

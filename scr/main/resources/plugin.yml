@@ -1,0 +1,421 @@
+name: AdminEssentialsPlus
+version: ${version}
+main: fx_moli.adminessentialsplus.AdminEssentialsPlus
+api-version: "1.21"
+folia-supported: true
+description: Powerful admin tools with AI assistance, warps, cooldowns and more
+author: FX_MOLI
+website: https://github.com/FX_MOLI/AdminEssentialsPlus
+
+commands:
+  fx:
+    description: Main command
+    usage: /<command>
+    permission: adminessentialsplus.fx
+  inspect:
+    description: Inspect player
+    usage: /<command> <player>
+    permission: adminessentialsplus.inspect
+  watch:
+    description: Watch player
+    usage: /<command> <player>
+    permission: adminessentialsplus.watch
+  banitem:
+    description: Ban item
+    usage: /<command> <item>
+    permission: adminessentialsplus.banitem
+  lookup:
+    description: Lookup player
+    usage: /<command> <player>
+    permission: adminessentialsplus.lookup
+  restoreinv:
+    description: Restore inventory
+    usage: /<command> <player>
+    permission: adminessentialsplus.restoreinv
+  pos1:
+    description: Set position 1
+    usage: /<command>
+    permission: adminessentialsplus.build
+  pos2:
+    description: Set position 2
+    usage: /<command>
+    permission: adminessentialsplus.build
+  copy:
+    description: Copy area
+    usage: /<command>
+    permission: adminessentialsplus.build
+  paste:
+    description: Paste area
+    usage: /<command>
+    permission: adminessentialsplus.build
+  replacearea:
+    description: Replace area
+    usage: /<command> <from> <to>
+    permission: adminessentialsplus.build
+  forestgen:
+    description: Generate forest
+    usage: /<command>
+    permission: adminessentialsplus.build
+  event:
+    description: Manage events
+    usage: /<command>
+    permission: adminessentialsplus.event
+  customrecipe:
+    description: Custom recipes
+    usage: /<command>
+    permission: adminessentialsplus.recipe
+  serverstats:
+    description: Server stats
+    usage: /<command>
+    permission: adminessentialsplus.stats
+  staffchat:
+    description: Staff chat
+    usage: /<command> <message>
+    permission: adminessentialsplus.staffchat
+  mute:
+    description: Mute player
+    usage: /<command> <player>
+    permission: adminessentialsplus.mute
+  fly:
+    description: Toggle fly
+    usage: /<command>
+    permission: adminessentialsplus.fly
+  vanish:
+    description: Toggle vanish
+    usage: /<command>
+    permission: adminessentialsplus.vanish
+  speed:
+    description: Set speed
+    usage: /<command> <speed>
+    permission: adminessentialsplus.speed
+  heal:
+    description: Heal player
+    usage: /<command>
+    permission: adminessentialsplus.heal
+  feed:
+    description: Feed player
+    usage: /<command>
+    permission: adminessentialsplus.feed
+  clear:
+    description: Clear inventory
+    usage: /<command>
+    permission: adminessentialsplus.clear
+  god:
+    description: God mode
+    usage: /<command>
+    permission: adminessentialsplus.god
+  tp:
+    description: Teleport
+    usage: /<command> <player>
+    permission: adminessentialsplus.tp
+  tphere:
+    description: Teleport here
+    usage: /<command> <player>
+    permission: adminessentialsplus.tphere
+  back:
+    description: Go back
+    usage: /<command>
+    permission: adminessentialsplus.back
+  spawn:
+    description: Go to spawn
+    usage: /<command>
+    permission: adminessentialsplus.spawn
+  setspawn:
+    description: Set spawn
+    usage: /<command>
+    permission: adminessentialsplus.setspawn
+  kick:
+    description: Kick player
+    usage: /<command> <player>
+    permission: adminessentialsplus.kick
+  ban:
+    description: Ban player
+    usage: /<command> <player>
+    permission: adminessentialsplus.ban
+  unban:
+    description: Unban player
+    usage: /<command> <player>
+    permission: adminessentialsplus.unban
+  warn:
+    description: Warn player
+    usage: /<command> <player>
+    permission: adminessentialsplus.warn
+  weather:
+    description: Change weather
+    usage: /<command> <type>
+    permission: adminessentialsplus.weather
+  time:
+    description: Change time
+    usage: /<command> <value>
+    permission: adminessentialsplus.time
+  gamemode:
+    description: Change gamemode
+    usage: /<command> <mode>
+    permission: adminessentialsplus.gamemode
+  invsee:
+    description: View inventory
+    usage: /<command> <player>
+    permission: adminessentialsplus.invsee
+  enderchest:
+    description: Open enderchest
+    usage: /<command>
+    permission: adminessentialsplus.enderchest
+  home:
+    description: Go home
+    usage: /<command>
+    permission: adminessentialsplus.home
+  sethome:
+    description: Set home
+    usage: /<command>
+    permission: adminessentialsplus.sethome
+  delhome:
+    description: Delete home
+    usage: /<command>
+    permission: adminessentialsplus.delhome
+  warp:
+    description: Warp
+    usage: /<command> <name>
+    permission: adminessentialsplus.warp
+  setwarp:
+    description: Set warp
+    usage: /<command> <name>
+    permission: adminessentialsplus.setwarp
+  delwarp:
+    description: Delete warp
+    usage: /<command> <name>
+    permission: adminessentialsplus.delwarp
+  repair:
+    description: Repair items
+    usage: /<command>
+    permission: adminessentialsplus.repair
+  workbench:
+    description: Open workbench
+    usage: /<command>
+    permission: adminessentialsplus.workbench
+  enchant:
+    description: Enchant item
+    usage: /<command> <enchant> <level>
+    permission: adminessentialsplus.enchant
+  item:
+    description: Give item
+    usage: /<command> <item>
+    permission: adminessentialsplus.item
+  kit:
+    description: Get kit
+    usage: /<command> <name>
+    permission: adminessentialsplus.kit
+  top:
+    description: Teleport to top
+    usage: /<command>
+    permission: adminessentialsplus.top
+  jump:
+    description: Jump forward
+    usage: /<command>
+    permission: adminessentialsplus.jump
+  near:
+    description: Show nearby players
+    usage: /<command>
+    permission: adminessentialsplus.near
+  tppos:
+    description: Teleport to position
+    usage: /<command> <x> <y> <z>
+    permission: adminessentialsplus.tppos
+  burn:
+    description: Burn player
+    usage: /<command> <player>
+    permission: adminessentialsplus.burn
+  extinguish:
+    description: Extinguish player
+    usage: /<command>
+    permission: adminessentialsplus.extinguish
+  smite:
+    description: Smite player
+    usage: /<command> <player>
+    permission: adminessentialsplus.smite
+  exp:
+    description: Give experience
+    usage: /<command> <amount>
+    permission: adminessentialsplus.exp
+  flyspeed:
+    description: Set fly speed
+    usage: /<command> <speed>
+    permission: adminessentialsplus.flyspeed
+  walkspeed:
+    description: Set walk speed
+    usage: /<command> <speed>
+    permission: adminessentialsplus.walkspeed
+  ping:
+    description: Check ping
+    usage: /<command> [player]
+    permission: adminessentialsplus.ping
+  hat:
+    description: Wear item as hat
+    usage: /<command>
+    permission: adminessentialsplus.hat
+  nick:
+    description: Change nickname
+    usage: /<command> <nick> [player]
+    permission: adminessentialsplus.nick
+  suicide:
+    description: Kill yourself
+    usage: /<command>
+    permission: adminessentialsplus.suicide
+  launch:
+    description: Launch player
+    usage: /<command> <player> [power]
+    permission: adminessentialsplus.launch
+  freeze:
+    description: Freeze player
+    usage: /<command> <player>
+    permission: adminessentialsplus.freeze
+  explode:
+    description: Create explosion
+    usage: /<command> <player> [power]
+    permission: adminessentialsplus.explode
+  broadcast:
+    description: Broadcast message
+    usage: /<command> <message>
+    permission: adminessentialsplus.broadcast
+  list:
+    description: List players
+    usage: /<command>
+    permission: adminessentialsplus.list
+  sudo:
+    description: Force player command
+    usage: /<command> <player> <command>
+    permission: adminessentialsplus.sudo
+  worldinfo:
+    description: World information
+    usage: /<command> [world]
+    permission: adminessentialsplus.worldinfo
+  menu:
+    description: Open GUI menu
+    usage: /<command>
+    permission: adminessentialsplus.menu
+    aliases: [gui, adminmenu]
+  warps:
+    description: List all warps
+    usage: /<command>
+    permission: adminessentialsplus.warps
+  clearinventory:
+    description: Clear inventory
+    usage: /<command> [player]
+    permission: adminessentialsplus.clearinventory
+    aliases: [ci, clearinv]
+  size:
+    description: Change player size
+    usage: /<command> <tiny/small/normal/large/giant> [player]
+    permission: adminessentialsplus.size
+  healall:
+    description: Heal all players
+    usage: /<command>
+    permission: adminessentialsplus.healall
+  glow:
+    description: Toggle glow effect
+    usage: /<command> [player]
+    permission: adminessentialsplus.glow
+  clearlag:
+    description: Clear lag (remove items and entities)
+    usage: /<command> [mobs]
+    permission: adminessentialsplus.clearlag
+  trail:
+    description: Particle trail
+    usage: /<command> <type> [player]
+    permission: adminessentialsplus.trail
+  rocket:
+    description: Launch player as rocket
+    usage: /<command> [player]
+    permission: adminessentialsplus.rocket
+  stack:
+    description: Stack items in inventory
+    usage: /<command>
+    permission: adminessentialsplus.stack
+  nightvision:
+    description: Toggle night vision
+    usage: /<command> [player]
+    permission: adminessentialsplus.nightvision
+    aliases: [nv]
+  skull:
+    description: Get player skull
+    usage: /<command> <player>
+    permission: adminessentialsplus.skull
+  rainbow:
+    description: Rainbow armor effect
+    usage: /<command> [player]
+    permission: adminessentialsplus.rainbow
+  slap:
+    description: Slap player
+    usage: /<command> <player> [power]
+    permission: adminessentialsplus.slap
+  particle:
+    description: Create particle effects
+    usage: /<command> <type> [amount]
+    permission: adminessentialsplus.particle
+  hug:
+    description: Hug a player
+    usage: /<command> <player>
+    permission: adminessentialsplus.hug
+  highfive:
+    description: High five a player
+    usage: /<command> <player>
+    permission: adminessentialsplus.highfive
+  me:
+    description: RP action command
+    usage: /<command> <action>
+    permission: adminessentialsplus.me
+  coinflip:
+    description: Flip a coin
+    usage: /<command>
+    permission: adminessentialsplus.coinflip
+    aliases: [cf]
+  repair:
+    description: Repair item in hand
+    usage: /<command>
+    permission: adminessentialsplus.repair
+  trash:
+    description: Open trash bin
+    usage: /<command>
+    permission: adminessentialsplus.trash
+  discord:
+    description: Show Discord link
+    usage: /<command>
+  rules:
+    description: Show server rules
+    usage: /<command>
+  quickactions:
+    description: Quick admin actions
+    usage: /<command> <action>
+    permission: adminessentialsplus.quickactions
+    aliases: [qa]
+  mass:
+    description: Mass player actions
+    usage: /<command> <action>
+    permission: adminessentialsplus.mass
+  playerinfo:
+    description: View detailed player info
+    usage: /<command> <player>
+    permission: adminessentialsplus.playerinfo
+    aliases: [pinfo]
+
+permissions:
+  adminessentialsplus.*:
+    description: All permissions
+    default: op
+    children:
+      adminessentialsplus.warp: true
+      adminessentialsplus.setwarp: true
+      adminessentialsplus.delwarp: true
+      adminessentialsplus.warps: true
+      adminessentialsplus.invsee: true
+      adminessentialsplus.enderchest: true
+      adminessentialsplus.enderchest.others: true
+      adminessentialsplus.clearinventory: true
+      adminessentialsplus.repair: true
+      adminessentialsplus.weather: true
+      adminessentialsplus.time: true
+      adminessentialsplus.speed: true
+      adminessentialsplus.bypass.cooldown: true
+      adminessentialsplus.quickactions: true
+      adminessentialsplus.mass: true
+      adminessentialsplus.playerinfo: true
+      adminessentialsplus.bypass.kick: true
